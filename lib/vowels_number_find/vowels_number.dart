@@ -9,16 +9,21 @@ class VowelNumber extends StatefulWidget{
 
 class VowelNumberState extends State<VowelNumber>{
   TextEditingController _controller=TextEditingController();
-  String result='';
-  void countVowels(){
-    String input='abcdefistouwxyz';
-    List<String> findVowels=[];
-    input=TextEditingController().toString();
-    for(int i=0; i<input.length; i++){
+  String userInput='';
 
+  void countVowels(String input){
+    var num=_controller.text.length;
+    Var result="";
+    for(int i=0; i<num.length; i++){
+      if(input[i] == 'a'|| input[i] == 'e' || input[i] == 'i' || input[i] == 'o' ||
+          input[i] == 'u'||
+      input[i] == 'A' || input[i] == 'E' || input[i] == 'I'|| input[i] == 'O'|| input[i] == 'U'){
+        result ++;
 
-
+      }
     }
+    userInput= result;
+    userInput=_controller.text;
     setState(() {});
   }
   @override
@@ -42,7 +47,7 @@ class VowelNumberState extends State<VowelNumber>{
           ),
           SizedBox(height: 20,),
           ElevatedButton(onPressed: (){
-            VowelNumberState
+
           },
               child: Text('Vowels'))
         ],

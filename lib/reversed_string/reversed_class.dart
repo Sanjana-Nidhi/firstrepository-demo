@@ -22,6 +22,7 @@ class ReversedString extends StatefulWidget{
 class ReversedStringState extends State<ReversedString>{
   TextEditingController _controller=TextEditingController();
   String input='Flutter is amazing';
+
   String reversedWords(String input){
     List<String> words=input.split('');
     List<String> reverseWords=words.reversed.toList();
@@ -52,7 +53,7 @@ class ReversedStringState extends State<ReversedString>{
         ),
         ElevatedButton(onPressed: (){
           setState(() {
-            reversedWords('');
+            reversedWords(_controller.text);
           });
         }, child: Text('Reverse')),
         Text('String Reverse is : $reversedWords(input)')
